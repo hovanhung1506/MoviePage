@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
 import { lazy, Suspense } from 'react'
+import Notfound from 'pages/Notfound'
 
 const HomePage = lazy(() => import('pages/HomePage'))
 const MovieDetailPage = lazy(() => import('pages/MovieDetailPage'))
@@ -29,6 +30,7 @@ function App() {
           <Route path="/movies" element={<MoviePage />} />
           <Route path="/movies/:id" element={<MovieDetailPage />} />
         </Route>
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </Suspense>
   )
